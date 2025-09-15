@@ -2,7 +2,7 @@
   "name": "lambda-load-test",
   "version": "1.0.0",
   "scripts": {
-    "test": "artillery run load-test.yml"
+    "test": "artillery run load-test.yml -o artillery-report.json"
   },
   "dependencies": {
     "artillery": "2.0.21",
@@ -11,5 +11,6 @@
     "node-fetch": "^3.3.2"
   }
 }
+
 
 
