@@ -1,5 +1,5 @@
 const AWS = require("aws-sdk");
-const faker = require("faker");
+const { faker } = require("@faker-js/faker");
 const s3 = new AWS.S3({ region: "us-east-1" });
 
 module.exports = {
@@ -23,3 +23,4 @@ module.exports = {
     });
   }
 };
+
