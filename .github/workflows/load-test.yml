@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd ./load-test
-          npm install artillery@2.0.21 aws-sdk@^2.1692.0 @faker-js/faker@10.0.0 node-fetch-native@1.6.7
+          npm install artillery@2.0.21 aws-sdk@^2.1692.0 @faker-js/faker@10.1.0 node-fetch@^3.3.2
         shell: bash
 
       # Step 4: Run Artillery load test and collect CloudWatch metrics
