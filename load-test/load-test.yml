@@ -1,0 +1,13 @@
+config:
+  target: "https://s3.amazonaws.com"
+  phases:
+    - duration: 60
+      arrivalRate: 5
+  processor: "./processor.js"
+  defaults:
+    headers:
+      Content-Type: "text/csv"
+scenarios:
+  - name: "Upload CSV to S3"
+    flow:
+      - function: "uploadCsv"
