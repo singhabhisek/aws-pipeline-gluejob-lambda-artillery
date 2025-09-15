@@ -7,23 +7,31 @@ jobs:
   load-test:
     runs-on: ubuntu-latest
     steps:
+      # Step 1: Checkout the repo
       - uses: actions/checkout@v3
 
+      # Step 2: Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
+      # Step 3: Install dependencies (artillery, aws-sdk, faker, node-fetch)
       - name: Install dependencies
-        run: npm ci
-        working-directory: ./load-test
+        run: |
+          cd ./load-test
+          npm install artillery@2.0.21 aws-sdk@^2.1350.0 faker@^9.0.0 node-fetch@^3.4.0
+        shell: bash
 
+      # Step 4: Run Artillery load test and collect CloudWatch metrics
       - name: Run Artillery Load Test & Collect Metrics
         run: |
+          cd ./load-test
           npm run test
           node collect-metrics.js
-        working-directory: ./load-test
+        shell: bash
 
+      # Step 5: Upload reports as artifacts
       - name: Upload Reports
         uses: actions/upload-artifact@v4
         with:
