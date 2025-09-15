@@ -6,8 +6,8 @@
   },
   "dependencies": {
     "artillery": "2.0.21",
-    "aws-sdk": "^2.1350.0",
-    "faker": "^9.0.0",
+    "aws-sdk": "^2.1692.0",
+    "@faker-js/faker": "^10.1.0",
     "node-fetch": "^3.4.0"
   }
 }
