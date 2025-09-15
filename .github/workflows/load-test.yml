@@ -28,7 +28,7 @@ jobs:
         run: |
           cd ./load-test
           # Run artillery and save JSON report
-          npm run test -o artillery-report.json
+          npm run test
           # Convert JSON → HTML
           npx artillery report artillery-report.json --output artillery-report.html
           # Collect CloudWatch metrics
