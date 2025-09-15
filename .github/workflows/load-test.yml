@@ -14,13 +14,13 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
 
       # Step 3: Install dependencies (artillery, aws-sdk, faker, node-fetch)
       - name: Install dependencies
         run: |
           cd ./load-test
-          npm install artillery@2.0.21 aws-sdk@^2.1350.0 faker@^9.0.0 node-fetch@^3.4.0
+          npm install artillery@2.0.21 aws-sdk@^2.1692.0 @faker-js/faker@10.0.0 node-fetch-native@1.6.7
         shell: bash
 
       # Step 4: Run Artillery load test and collect CloudWatch metrics
